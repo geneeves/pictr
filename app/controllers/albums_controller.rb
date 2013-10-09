@@ -18,6 +18,21 @@ class AlbumsController < ApplicationController
     @album = Album.find(params[:id])
   end
 
+  def edit
+    @album = Album.find(params[:id])
+  end
+
+  def update
+    @album = Album.find(params[:id])
+    if @album.update(params[:album].permit(:name))
+      flash[:notice] = "Album name updated."
+      redirect_to @album
+    else
+      render :edit
+    end
+  end
+  
+
 private
   def album_params
     params.require(:album).permit(:name, :photos_attributes => [:album_id, :name, :image])

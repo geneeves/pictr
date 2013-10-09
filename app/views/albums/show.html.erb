@@ -1,4 +1,5 @@
 <h1><%= @album.name %></h1>
+<%= link_to "Edit Album", edit_album_path %>
 <%= link_to "Add a photo", new_photo_path(:photo => {album_id: @album.id}) %>
 <% @album.photos.each do |photo| %>
   <%= render photo %>

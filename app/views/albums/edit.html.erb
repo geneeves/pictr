@@ -1,0 +1,7 @@
+ <h1>Edit <%= @album.name %></h1>
+
+ <%= form_for @album do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.submit "Update", :class => "btn btn-primary" %>
+<% end %>
