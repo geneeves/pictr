@@ -2,7 +2,7 @@ class Photo < ActiveRecord::Base
 
 
   validates :name, :presence => true
-  validates :album_id, :presence => true
+  validates :album, :presence => true
 
   belongs_to :album
 

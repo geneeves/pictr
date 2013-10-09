@@ -1,6 +1,9 @@
 class PhotosController < ApplicationController
   def new
-    @photo = Photo.new(photo_params)
+    respond_to do |format|
+      format.html { @photo = Photo.new(photo_params) }
+      format.js { @photo = Photo.new }
+    end  
   end
 
   def create
@@ -17,6 +20,13 @@ class PhotosController < ApplicationController
 
   def show
     @photo = Photo.find(params[:id])
+  end
+
+  def destroy
+    @photo = Photo.find(params[:id])
+    @name = @photo.name
+    @photo.destroy
+    flash[:notice] = "Your photo <% @name %> has been destroyed." 
   end
 
 private
