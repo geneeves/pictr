@@ -1,11 +1,12 @@
 class PhotosController < ApplicationController
   def new
-    @photo = Photo.new
+    @photo = Photo.new(photo_params)
   end
 
   def create
     @photo = Photo.new(photo_params)
-    if @photo.save
+
+    if @photo.save!
       flash[:notice] = "Your photo has been added."
       redirect_to @photo.album
     else
@@ -14,8 +15,12 @@ class PhotosController < ApplicationController
     end
   end
 
+  def show
+    @photo = Photo.find(params[:id])
+  end
+
 private
   def photo_params
-    params.require(:photo).permit(:name, :image)
+    params.require(:photo).permit(:name, :image, :album_id)
   end
 end

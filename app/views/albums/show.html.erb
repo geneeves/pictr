@@ -1,2 +1,7 @@
 <h1><%= @album.name %></h1>
-<%= link_to "Add a photo", new_photo_path(:album => @album) %>
+<%= link_to "Add a photo", new_photo_path(:photo => {album_id: @album.id}) %>
+<% @album.photos.each do |photo| %>
+  <%= render photo %>
+  <%= photo.name %>
+  <%= photo.created_at %>
+<% end %>

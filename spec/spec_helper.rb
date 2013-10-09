@@ -5,6 +5,7 @@ require 'rspec/rails'
 require 'rspec/autorun'
 require File.dirname(__FILE__) + "/factories"
 require 'capybara/rails'
+require "paperclip/matchers"
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
@@ -41,5 +42,7 @@ RSpec.configure do |config|
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = "random"
+
+  config.include Paperclip::Shoulda::Matchers
 
 end
