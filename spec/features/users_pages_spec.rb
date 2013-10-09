@@ -20,7 +20,7 @@ feature "Signing in" do
   end
 end
 
-feature "Signin up" do
+feature "Sign up" do
   scenario "with valid inputs" do
     user = FactoryGirl.build(:user)
     visit '/users/sign_up'
@@ -38,7 +38,7 @@ feature "Signin up" do
     page.should have_content 'blank'
   end
 
-  scenario "with nonmatching" do
+  scenario "with nonmatching password" do
     user = FactoryGirl.build(:user)
     visit '/users/sign_up'
     fill_in "Email", :with => user.email

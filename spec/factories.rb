@@ -6,4 +6,8 @@ FactoryGirl.define do
     password 'foobarbaz'
     password_confirmation 'foobarbaz'
   end
+
+  factory :album do
+    name 'kittens'
+  end
 end

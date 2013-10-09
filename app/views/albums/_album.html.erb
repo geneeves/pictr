@@ -1,0 +1,4 @@
+<div class="album">
+  <%= image_tag album.photos.first.image.url(:medium) if album.photos.first %>
+  <%= link_to album.name, album %>
+</div>

@@ -1,0 +1,7 @@
+<h1>Make a new album</h1>
+<%= form_for @album do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.submit "submit", :class => "btn btn-primary" %>
+<% end %>
+

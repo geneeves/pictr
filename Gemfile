@@ -10,6 +10,7 @@ gem 'turbolinks'
 gem 'jbuilder'
 gem 'devise'
 gem 'bootstrap-sass', git: 'https://github.com/thomas-mcdonald/bootstrap-sass' 
+gem 'paperclip'
 
 
 group :test, :development do 
