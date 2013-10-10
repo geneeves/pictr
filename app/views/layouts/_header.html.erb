@@ -2,7 +2,7 @@
   <%= link_to "Pictr", root_path, :class => "navbar-brand" %>
   <ul class='nav navbar-nav pull-right'>
     <% if user_signed_in? %>
-      <li class="navbar-text">Signed in as <%= current_user.email %></li>
+      <li class="navbar-text">Signed in as <%= current_user.username %></li>
       <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
     <% else %>
       <li><%= link_to "Sign in", new_user_session_path %></li>
