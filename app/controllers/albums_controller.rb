@@ -32,6 +32,13 @@ class AlbumsController < ApplicationController
     end
   end
   
+  def destroy
+    @album = Album.find(params[:id])
+    @name = @album.name
+    @album.destroy
+    flash[:notice] = "Your album #{@name} has been destroyed."
+    redirect_to root_path
+  end
 
 private
   def album_params

@@ -8,13 +8,26 @@ class PhotosController < ApplicationController
 
   def create
     @photo = Photo.new(photo_params)
-
-    if @photo.save!
+    if @photo.save
       flash[:notice] = "Your photo has been added."
-      redirect_to @photo.album
+      redirect_to @photo
     else
       flash[:alert] = "Something went wrong!"
       render :new
+    end
+  end
+
+  def edit
+    @photo = Photo.find(params[:id])
+  end
+
+  def update
+    @photo = Photo.find(params[:id])
+    if @photo.update(params[:photo].permit(:image, :name, :album_id))
+      flash[:notice] = "Photo updated."
+      redirect_to @photo.album
+    else
+      render :edit
     end
   end
 
@@ -26,7 +39,8 @@ class PhotosController < ApplicationController
     @photo = Photo.find(params[:id])
     @name = @photo.name
     @photo.destroy
-    flash[:notice] = "Your photo <% @name %> has been destroyed." 
+    flash[:notice] = "Your photo #{@name} has been destroyed." 
+    redirect_to root_path
   end
 
 private

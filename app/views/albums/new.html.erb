@@ -1,9 +1,8 @@
 <h1>Make a new album</h1>
 <%= form_for @album, :html => {:multipart => true} do |main_form| %>
-  <div class="field">
     <%= main_form.label :name %>
     <%= main_form.text_field :name %>
-  </div>
+    
     <%= main_form.fields_for :photos, @album.photos.new do |f| %>
       <%= f.hidden_field :album_id %>
       <%= f.label :name %>
