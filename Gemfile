@@ -11,6 +11,7 @@ gem 'jbuilder'
 gem 'devise'
 gem 'bootstrap-sass', git: 'https://github.com/thomas-mcdonald/bootstrap-sass' 
 gem 'paperclip'
+gem 'rails_12factor'
 
 
 group :test, :development do 
