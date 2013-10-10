@@ -1,5 +1,7 @@
 <div class="photo">
-  <%= image_tag photo.image.url(:medium) %>
-  <%= link_to photo.name, photo %>
-  <%= photo.created_at %>
+  <%= link_to (image_tag photo.image.url(:medium)), photo %>
+  <div>
+    <%= link_to photo.name, photo %>
+    <%= photo.created_at.strftime("Uploaded on %B %e, %Y") %>
+  </div>
 </div>

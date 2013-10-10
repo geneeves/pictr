@@ -1,4 +1,9 @@
 class PhotosController < ApplicationController
+  def index
+    @photos = Photo.all
+    render :index
+  end
+
   def new
     respond_to do |format|
       format.html { @photo = Photo.new(photo_params) }

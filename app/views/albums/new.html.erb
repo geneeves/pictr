@@ -1,15 +1,19 @@
 <h1>Make a new album</h1>
-<%= form_for @album, :html => {:multipart => true} do |main_form| %>
-    <%= main_form.label :name %>
+  <%= form_for @album, :html => {:multipart => true} do |main_form| %>
+    <%= main_form.label :name, 'Album Name' %>
     <%= main_form.text_field :name %>
-    
-    <%= main_form.fields_for :photos, @album.photos.new do |f| %>
-      <%= f.hidden_field :album_id %>
-      <%= f.label :name %>
-      <%= f.text_field :name %>
-      <%= f.label :image %>
-      <%= f.file_field :image %>
-    <% end %>  
+    <div>
+      <%= main_form.fields_for :photos, @album.photos.new do |f| %>
+        <%= f.hidden_field :album_id %>
+        <div class="new_form">
+          <%= f.label :name, 'Image Name' %>
+          <%= f.text_field :name %>
+          <div class="new_form">
+            <%= f.file_field :image %>
+          </div>
+        </div>
+      <% end %>
+    </div>  
   <%= main_form.submit "submit", :class => "btn btn-primary" %>
 <% end %>
 

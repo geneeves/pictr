@@ -1,0 +1,7 @@
+<h1>Everyone's Albums</h1>
+
+<ul>
+  <% @albums.each do |album| %>
+    <li><%= render album %>by <%= album.user.email %></li>
+  <% end %>
+</ul>    

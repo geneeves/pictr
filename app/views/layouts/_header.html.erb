@@ -1,5 +1,10 @@
 <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
-  <%= link_to "Pictr", root_path, :class => "navbar-brand" %>
+  <ul class='nav navbar-nav pull-left'>
+    <li><%= link_to "Pictr", root_path, :class => "navbar-brand" %></li>
+    <li><%= link_to "All Albums", albums_path %></li>
+    <li><%= link_to "All Photos", photos_path %></li>
+  </ul>  
+
   <ul class='nav navbar-nav pull-right'>
     <% if user_signed_in? %>
       <li class="navbar-text">Signed in as <%= current_user.email %></li>

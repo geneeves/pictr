@@ -1,4 +1,6 @@
 <div class="album">
-  <%= image_tag album.photos.first.image.url(:medium) if album.photos.first %>
-  <%= link_to album.name, album %>
+  <%= link_to (image_tag album.photos.first.image.url(:medium)), album if album.photos.first %>
+  <div class="album-listing">
+    <%= link_to album.name, album %>
+  </div>
 </div>
