@@ -7,9 +7,8 @@ feature "Adding a photo" do
     album = FactoryGirl.create(:album, { user: user })
     visit "/albums/#{album.id}"
     click_on "Add a photo"
-    fill_in "Name", :with => 'cute kitten'
-
-    attach_file "Image", "spec/kitten.jpg"
+    fill_in "Image Name", :with => 'cute kitten'
+    attach_file "Upload File", "spec/kitten.jpg"
     click_button "Upload"
     page.should have_content "cute kitten"
   end

@@ -17,6 +17,7 @@ class AlbumsController < ApplicationController
       flash[:alert] = "Something went wrong."
       render :new
     end
+    authorize! :manage, @album
   end
 
   def show
@@ -43,6 +44,7 @@ class AlbumsController < ApplicationController
     @album.destroy
     flash[:notice] = "Your album #{@name} has been destroyed."
     redirect_to root_path
+    authorize! :manage, @album
   end
 
 private

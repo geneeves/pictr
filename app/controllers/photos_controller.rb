@@ -5,6 +5,7 @@ class PhotosController < ApplicationController
   end
 
   def new
+
     respond_to do |format|
       format.html { @photo = Photo.new(photo_params) }
       format.js { @photo = Photo.new }
@@ -24,6 +25,7 @@ class PhotosController < ApplicationController
 
   def edit
     @photo = Photo.find(params[:id])
+    authorize! :manage, @photo
   end
 
   def update
@@ -42,6 +44,7 @@ class PhotosController < ApplicationController
 
   def destroy
     @photo = Photo.find(params[:id])
+    authorize! :manage, @photo
     @name = @photo.name
     @photo.destroy
     flash[:notice] = "Your photo #{@name} has been destroyed." 

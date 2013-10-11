@@ -4,7 +4,9 @@ feature 'Create an album' do
   scenario 'with valid input' do
     create_and_sign_in_user
     click_on 'Create an album'
-    fill_in 'Name', :with => "Kittens"
+    fill_in 'Album Name', :with => 'Kittens'
+    fill_in 'Image Name', :with => 'cute kitten'
+    attach_file 'Upload File', "spec/kitten.jpg"
     click_button "submit"
     page.should have_content "Kittens"
   end

@@ -1,4 +1,12 @@
 <h1>Make a new album</h1>
+<% if @album.errors.any? %>
+  <h3>Please correct these problems:</h3>
+  <ul>
+    <% @album.errors.full_messages.each do |message| %>
+      <li class="alert alert-danger"><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
   <%= form_for @album, :html => {:multipart => true} do |main_form| %>
     <%= main_form.label :name, 'Album Name' %>
     <%= main_form.text_field :name %>
@@ -9,6 +17,7 @@
           <%= f.label :name, 'Image Name' %>
           <%= f.text_field :name %>
           <div class="new_form">
+            <%= f.label :image, 'Upload File' %>
             <%= f.file_field :image %>
           </div>
         </div>
