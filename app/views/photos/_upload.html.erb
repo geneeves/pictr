@@ -1,0 +1,10 @@
+<%= form_for @photo do |f| %>
+  <%= f.hidden_field :album_id %>
+  <%= f.label :name, 'Image Name' %>
+  <%= f.text_field :name %>
+  <div class="new_form">
+    <%= f.label :image, 'Upload File' %>
+    <%= f.file_field :image %>
+  </div>
+  <%= f.submit "Upload", :class => "btn btn-primary" %>
+<% end %>

@@ -1,9 +1,4 @@
 <h1><%= @photo.name %></h1>
 <h3>In the album <%= link_to @photo.album.name, @photo.album %></h3>
 <%= render @photo %>
-<% if can? :manage, @photo %>
-  <div class="btn-group">
-    <%= link_to "Edit photo", edit_photo_path, :class => "btn btn-default" %>
-    <%= link_to "Delete photo", photo_path, :method => :delete,  :data => { :confirm => 'Are you sure you want to delete this?' }, :class => "btn btn-default" %>
-  </div>
-<% end %>
+

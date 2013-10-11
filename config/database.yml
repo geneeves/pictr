@@ -5,3 +5,7 @@ development:
 test:
   adapter: postgresql
   database: pictr_test
+
+production:
+  adapter: postgresql
+  database: pictr_production

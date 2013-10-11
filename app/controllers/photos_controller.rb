@@ -5,10 +5,9 @@ class PhotosController < ApplicationController
   end
 
   def new
-
     respond_to do |format|
       format.html { @photo = Photo.new(photo_params) }
-      format.js { @photo = Photo.new }
+      format.js { @photo = Photo.new(photo_params) }
     end  
   end
 
@@ -16,7 +15,7 @@ class PhotosController < ApplicationController
     @photo = Photo.new(photo_params)
     if @photo.save
       flash[:notice] = "Your photo has been added."
-      redirect_to @photo
+      redirect_to @photo.album
     else
       flash[:alert] = "Something went wrong!"
       render :new
@@ -46,9 +45,10 @@ class PhotosController < ApplicationController
     @photo = Photo.find(params[:id])
     authorize! :manage, @photo
     @name = @photo.name
+    @album = @photo.album
     @photo.destroy
     flash[:notice] = "Your photo #{@name} has been destroyed." 
-    redirect_to root_path
+    redirect_to @album
   end
 
 private

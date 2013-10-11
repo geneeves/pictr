@@ -4,5 +4,11 @@
     <%= link_to photo.name, photo %>
     <%= photo.created_at.strftime("Uploaded on %B %e, %Y") %>
   </div>
+  <% if can? :manage, photo %>
+    <div class="btn-group">
+      <%= link_to "Edit photo", edit_photo_path(:id => photo.id), :class => "btn btn-default" %>
+      <%= link_to "Delete photo", photo_path(:id => photo.id), :method => :delete,  :data => { :confirm => 'Are you sure you want to delete this?' }, :class => "btn btn-default" %>
+    </div>
+  <% end %>
 </div>
 

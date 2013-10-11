@@ -3,7 +3,7 @@
   <div class="btn-group">
     <%= link_to "Edit Album", edit_album_path, :class => "btn btn-default" %>
     <%= link_to "Delete Album", album_path, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-default"%>
-    <%= link_to "Add a photo", new_photo_path(:photo => {album_id: @album.id}), :class => "btn btn-default" %>
+    <%= link_to "Add a photo", new_photo_path(:photo => {album_id: @album.id}), :class => "btn btn-default", id: "new_link", remote: true %>
   </div>
 <% end %>
 <% @album.photos.each do |photo| %>
