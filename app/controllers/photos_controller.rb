@@ -1,7 +1,14 @@
 class PhotosController < ApplicationController
   def index
-    @photos = Photo.all
-    render :index
+    if params[:search]
+      @query = params[:search]
+      @results = Photo.basic_search(@query)
+      render :search_results
+    else
+      @photos = Photo.all
+      render :index
+    end
+
   end
 
   def new

@@ -13,5 +13,11 @@
       <li><%= link_to "Sign in", new_user_session_path %></li>
       <li><%= link_to "Sign up", new_user_registration_path %></li>
     <% end %>
+    <%= form_tag photos_path, :method => 'get' do %>
+      <%= label_tag :search, 'Search photos' %>
+      <%= text_field_tag :search %>
+      <%= submit_tag 'Search', :class => 'btn btn-primary' %>
+    <% end %>
+
    </ul>
 </nav>

@@ -1,0 +1,17 @@
+<h1>Search Results</h1>
+<% "Photos containing '#{@query}'" %>
+
+
+
+<% if @results.any? %>
+  <ul>
+    <% @results.each do |photo| %>
+      <li><%= render photo %></li>
+      <li>by <%= photo.album.user.username %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No photos found.</p>
+<% end %>
+
+<% link_to root_path %>

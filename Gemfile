@@ -13,6 +13,7 @@ gem 'bootstrap-sass', git: 'https://github.com/thomas-mcdonald/bootstrap-sass'
 gem 'paperclip'
 gem 'rails_12factor'
 gem 'cancan'
+gem 'textacular'
 
 
 group :test, :development do 
