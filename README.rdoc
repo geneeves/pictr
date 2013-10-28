@@ -1,3 +1,3 @@
-# Pictr
+==Pictr
 
 A simple Flickr clone built as part of [Epicodus]("http://epicodus.com").
