@@ -23,7 +23,7 @@ feature 'viewing an album' do
   scenario 'clicked on album name' do
     user = create_and_sign_in_user
     album = FactoryGirl.create(:album, :user => user)
-    visit "/users/#{user.id}"
+    visit user_path(user)
     click_on album.name
     page.should have_content 'kittens'
   end
