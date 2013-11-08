@@ -13,4 +13,4 @@ Here are some of the user stories we wrote to clarify our process:
 * [x] As a visitor or user, I want to be able to see all the albums.
 * [x] As a visitor or user, I want to be able to see all photos.
 * [x] As a visitor or user, I want to be able to search photos and albums.
-* [x] As a visitor or user, I want photos to be ordered by highest number of favorites.
+* [ ] As a visitor or user, I want photos to be ordered by highest number of favorites.
