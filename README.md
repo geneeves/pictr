@@ -1,4 +1,4 @@
-==Pictr
+#Pictr
 
 A simple Flickr clone built as part of [Epicodus Fall 2013](http://epicodus.com) with @anatighe and @dustinbrownman. We covered a lot of territory in building this project -- using [Devise](https://github.com/plataformatec/devise) for user authentication, and using [CanCan](https://github.com/ryanb/cancan) to limit permissions on editing and uploading photos in other user's albums. [Paperclip](https://github.com/thoughtbot/paperclip) is what's adding all the images, and [Capybara](https://github.com/jnicklas/capybara) is what's doing the integration testing, with other specs getting simplified by [FactoryGirl](https://github.com/thoughtbot/factory_girl).
 
