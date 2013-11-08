@@ -1,5 +1,0 @@
-==Pictr
-
-A simple Flickr clone built as part of [Epicodus Fall 2013] ("http://epicodus.com") with @anatighe and @dustinbrownman.
-
-Play with it online! [http://pictr.herokuapp.com]
