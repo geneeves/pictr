@@ -14,6 +14,7 @@ gem 'paperclip'
 gem 'rails_12factor'
 gem 'cancan'
 gem 'textacular'
+gem 'aws-sdk'
 
 
 group :test, :development do 
